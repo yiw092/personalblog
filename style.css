@@ -9,6 +9,6 @@
 nav .hardware-button + .hardware-button{margin-top:10px}
 
 /* The original star panel is now the Home control, including on mobile. */
-a.brand-panel{text-decoration:none}
+a.brand-panel{text-decoration:none;background:#b9e7d2}
 a.brand-panel:hover{filter:brightness(1.08)}
 @media(max-width:760px){a.brand-panel{display:flex;grid-column:1/-1;height:64px}.artwork-module{grid-row:2/4}}
