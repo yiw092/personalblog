@@ -4,8 +4,8 @@
 @media print{body{padding:0;background:white}.computer,.screen-frame,.screen{border:0;box-shadow:none;background:white;color:black;padding:0}.computer:before,.computer:after,.masthead,.sidebar,.control-deck,.titlebar{display:none}.workspace{display:block}}
 
 /* Actual public-domain textile photograph: Met 2009.300.6319. */
-body{background-image:linear-gradient(#f8f0d94d,#f8f0d94d),url('assets/russian-towel-met-173359.jpg');background-size:auto,520px auto;background-repeat:repeat;background-position:center top}
+body{min-height:100svh;background-image:linear-gradient(#f8f0d94d,#f8f0d94d),url('assets/russian-towel-met-173359.jpg');background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:fixed}
 .computer{background:#f8f0d9f5}
-.screen-frame{background:#e9e2cc url('assets/russian-towel-met-173359.jpg') repeat center top / 520px auto;padding:24px}
-@media(max-width:760px){body{background-size:auto,340px auto}.screen-frame{padding:14px;background-size:340px auto}}
+.screen-frame{background:#e9e2cc;padding:24px}
+@media(max-width:760px){.screen-frame{padding:14px}}
 @media print{body,.computer,.screen-frame{background:white}}

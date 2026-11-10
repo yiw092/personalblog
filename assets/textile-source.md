@@ -9,4 +9,4 @@ Source: https://www.metmuseum.org/art/collection/search/173359
 Photograph: https://images.metmuseum.org/CRDImages/es/original/31.318_CP2.jpg
 Local file: assets/russian-towel-met-173359.jpg
 
-This is the exact textile shown in the user's reference. The downloaded photograph is unchanged. CSS scales and repeats it as wallpaper, with a light color overlay outside the reading frame. No AI generation, tracing, inpainting or pattern reconstruction was used.
+This is the exact textile shown in the user's reference. The downloaded photograph is unchanged. CSS displays it as one large, non-repeating background with a light color overlay outside the reading frame. No AI generation, tracing, inpainting or pattern reconstruction was used.
