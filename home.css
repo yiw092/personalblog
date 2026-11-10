@@ -23,3 +23,7 @@ main{min-height:0;padding-top:clamp(14px,3vh,32px)}
 @media(max-height:450px){body{padding-top:10px}.site-header{padding:8px 18px}.site-footer{height:44px;padding:6px 4px}main{padding-top:12px}}
 @media(prefers-reduced-motion:no-preference){a{transition:color .15s,background-color .15s}}
 @media print{body{height:auto;padding:0;background:white}.site-shell{display:block}.admin-link,.site-header nav{display:none}.site-header,.painting-frame{box-shadow:none}.painting-frame img{height:auto}}
+
+/* Photograph of human-made 18th-century lace; Met Open Access, object 219674. */
+.footer-rule{height:36px;background:#e7eee3 url('assets/lace-border-met-219674.jpg') repeat-x center 48%;background-size:340px auto;mix-blend-mode:multiply;opacity:.8}
+@media(max-height:450px){.footer-rule{height:28px;background-size:280px auto}}
