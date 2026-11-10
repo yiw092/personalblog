@@ -1,0 +1,40 @@
+media:
+  input: assets/uploads
+  output: /personalblog/assets/uploads
+  categories: [image]
+  rename: safe
+
+content:
+  - name: posts
+    label: Blog posts
+    type: collection
+    path: content/posts
+    format: json
+    subfolders: false
+    filename:
+      template: "{year}-{month}-{day}-{hour}{minute}{second}-{primary}.json"
+      field: false
+    view:
+      primary: title
+      fields: [title, date]
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: body
+        label: Post
+        type: rich-text
+        required: true
+        description: Saving publishes this post to your public blog. Use the toolbar to format text and insert images.
+        options:
+          format: html
+          switcher: false
