@@ -4,6 +4,9 @@
 // Post files should contain an HTML fragment (paragraphs, headings, etc.), not a full page.
 window.BLOG = {
   title: '',
-  artwork: null, // { src: 'assets/your-artwork.png', alt: 'Your description' }
+  artwork: {
+    src: 'assets/venice_the_dogana_and_san_giorgio_maggiore_1942.9.85.jpg',
+    alt: 'Venice, the Dogana and San Giorgio Maggiore'
+  },
   posts: []
 };
