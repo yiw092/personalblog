@@ -11,8 +11,13 @@ main{min-height:0;padding-top:clamp(14px,3vh,32px)}
 .art-section{height:100%;min-height:0}
 .painting-frame{height:100%;padding:10px;background:var(--cream);border:1px solid #8e8b75;box-shadow:0 4px 0 #d3d8c8}
 .painting-frame img{display:block;width:100%;height:100%;object-fit:contain}
+.painting-stage{position:relative;width:100%;height:100%}
+.painting-hotspots{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.painting-admin{pointer-events:auto;cursor:default}
+.painting-admin:focus-visible{outline:none}
+.painting-admin:focus-visible rect{stroke:#426e59;stroke-width:3}
 .site-footer{display:flex;align-items:center;gap:24px;height:64px;padding:12px 4px}.footer-home{font-size:25px}.footer-rule{height:1px;background:#b7c4b4;flex:1}
-.admin-link{display:grid;place-items:center;width:32px;height:32px;color:#747c6b;font-size:17px;border:1px solid transparent}.admin-link:hover,.admin-link:focus-visible{color:var(--chocolate);border-color:#adbca8;background:#d9e7d8}
+.admin-link{display:grid;place-items:center;width:32px;height:32px;color:#747c6b;font-size:17px;border:1px solid transparent}
 @media(max-width:650px){.site-header{padding:14px 18px}.home-wordmark{font-size:23px;gap:8px}.site-header nav{gap:18px;font-size:12px}.painting-frame{padding:6px}.site-footer{height:56px}}
 @media(max-height:450px){body{padding-top:10px}.site-header{padding:8px 18px}.site-footer{height:44px;padding:6px 4px}main{padding-top:12px}}
 @media(prefers-reduced-motion:no-preference){a{transition:color .15s,background-color .15s}}
