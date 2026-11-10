@@ -16,4 +16,9 @@ test('production output includes assets and editor entry, not source or fixtures
   vm.runInNewContext(readFileSync('dist/content.js', 'utf8'), context);
   assert.ok(Array.isArray(context.window.BLOG.posts));
   assert.match(context.window.BLOG.artwork.src, /venice/);
+  // A changed stylesheet must get a new URL, even during Pages' cache lifetime.
+  const homepage = readFileSync('dist/index.html', 'utf8');
+  assert.match(homepage, /href="home\.css\?v=[a-f0-9]{12}"/);
+  const blog = readFileSync('dist/blog.html', 'utf8');
+  assert.match(blog, /href="style\.css\?v=[a-f0-9]{12}"/);
 });

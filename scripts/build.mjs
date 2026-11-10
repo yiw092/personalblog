@@ -2,6 +2,7 @@ import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
+import { createHash } from 'node:crypto';
 import { compilePosts } from './posts.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -22,4 +23,15 @@ for (const name of ['index.html', 'home.css', 'home.js', 'blog.html', 'style.css
 }
 for (const file of compiled.files) await writeFile(path.join(output, 'posts', file.filename), file.body);
 await writeFile(path.join(output, 'content.js'), 'window.BLOG = ' + JSON.stringify({ ...context.window.BLOG, posts: compiled.posts }, null, 2) + ';\n');
+// Pages caches static assets. Fingerprint local CSS/JS references after generating
+// content.js so a new deployment never mixes a new page with stale assets.
+for (const page of ['index.html', 'blog.html']) {
+  let html = await readFile(path.join(output, page), 'utf8');
+  for (const match of [...html.matchAll(/(?:href|src)="([\w.-]+\.(?:css|js))"/g)]) {
+    const asset = match[1];
+    const version = createHash('sha256').update(await readFile(path.join(output, asset))).digest('hex').slice(0, 12);
+    html = html.replaceAll(`"${asset}"`, `"${asset}?v=${version}"`);
+  }
+  await writeFile(path.join(output, page), html);
+}
 console.log(`Built blog with ${compiled.posts.length} posts in dist/`);
