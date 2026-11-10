@@ -6,6 +6,6 @@
     "start": "npm run build && node preview.mjs",
     "build": "node scripts/build.mjs",
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check app.js && node --check content.js && node --check preview.mjs && node --check scripts/build.mjs && node --check scripts/posts.mjs && node --check home.js && node --check latest-posts.js"
+    "check": "node --check app.js && node --check content.js && node --check preview.mjs && node --check scripts/build.mjs && node --check scripts/posts.mjs && node --check home.js"
   }
 }
