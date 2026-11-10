@@ -5,3 +5,5 @@
 /* Preserve the supplied painting's proportions and smooth detail. */
 .artwork-slot:has(img){aspect-ratio:auto}
 .artwork-slot img{display:block;height:auto;image-rendering:auto}
+
+nav .hardware-button + .hardware-button{margin-top:10px}
