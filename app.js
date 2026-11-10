@@ -71,6 +71,6 @@ function toggle(id, className) {
   });
 }
 toggle('size-toggle', 'large-text');
-toggle('theme-toggle', 'light-reading');
+toggle('theme-toggle', 'dark-reading');
 window.addEventListener('hashchange', route);
 route();

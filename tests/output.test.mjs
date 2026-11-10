@@ -21,4 +21,9 @@ test('production output includes assets and editor entry, not source or fixtures
   assert.match(homepage, /href="home\.css\?v=[a-f0-9]{12}"/);
   const blog = readFileSync('dist/blog.html', 'utf8');
   assert.match(blog, /href="style\.css\?v=[a-f0-9]{12}"/);
+  assert.doesNotMatch(blog, /href="admin\//);
+  const admin = readFileSync('dist/admin/index.html', 'utf8');
+  assert.doesNotMatch(admin, /http-equiv="refresh"/);
+  assert.match(admin, /href="admin\.css\?v=[a-f0-9]{12}"/);
+  assert.match(admin, /href="https:\/\/app.pagescms.org\/"/);
 });

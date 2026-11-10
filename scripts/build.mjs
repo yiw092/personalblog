@@ -25,11 +25,11 @@ for (const file of compiled.files) await writeFile(path.join(output, 'posts', fi
 await writeFile(path.join(output, 'content.js'), 'window.BLOG = ' + JSON.stringify({ ...context.window.BLOG, posts: compiled.posts }, null, 2) + ';\n');
 // Pages caches static assets. Fingerprint local CSS/JS references after generating
 // content.js so a new deployment never mixes a new page with stale assets.
-for (const page of ['index.html', 'blog.html']) {
+for (const page of ['index.html', 'blog.html', 'admin/index.html']) {
   let html = await readFile(path.join(output, page), 'utf8');
   for (const match of [...html.matchAll(/(?:href|src)="([\w.-]+\.(?:css|js))"/g)]) {
     const asset = match[1];
-    const version = createHash('sha256').update(await readFile(path.join(output, asset))).digest('hex').slice(0, 12);
+    const version = createHash('sha256').update(await readFile(path.join(output, path.dirname(page), asset))).digest('hex').slice(0, 12);
     html = html.replaceAll(`"${asset}"`, `"${asset}?v=${version}"`);
   }
   await writeFile(path.join(output, page), html);
