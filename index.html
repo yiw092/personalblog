@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="content.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#reading">Skip to reading area</a>
+  <div class="computer">
+    <header class="masthead"><span class="lamp" aria-hidden="true"></span><span id="site-name">Blog</span><span class="model" aria-hidden="true">◆ ◆ ◆</span></header>
+    <div class="workspace">
+      <main class="screen-frame">
+        <div class="titlebar"><span id="panel-title">Posts</span><span aria-hidden="true">■</span></div>
+        <div class="screen">
+          <section id="post-index" aria-labelledby="posts-heading"><div class="section-heading"><h1 id="posts-heading">Posts</h1><span id="post-count">0</span></div><div id="post-list"></div><p id="empty-state" class="empty">No posts yet.</p></section>
+          <article id="reading" tabindex="-1" hidden><header><time id="post-date"></time><h1 id="post-title"></h1></header><div id="post-body" class="prose"></div></article>
+          <noscript>Enable JavaScript to browse posts.</noscript>
+        </div>
+        <div class="frame-bottom" aria-hidden="true"><span class="vents"></span><span class="lamp yellow"></span><span class="lamp"></span></div>
+      </main>
+      <aside class="sidebar">
+        <div class="brand-panel" aria-hidden="true"><span class="brand-lines"></span><span class="brand-mark">✦</span><span class="brand-lines"></span></div>
+        <nav class="module" aria-label="Main navigation"><h2 class="module-title">Navigation</h2><a class="hardware-button" href="#" id="home-link">Posts <span aria-hidden="true">↵</span></a></nav>
+        <div class="module artwork-module"><div class="module-title">Artwork</div><div id="artwork" class="artwork-slot" aria-label="Artwork slot, currently empty"></div></div>
+        <div class="module status"><span class="lamp" aria-hidden="true"></span><span id="status-text" role="status">Ready</span></div>
+        <div class="side-vents" aria-hidden="true"></div>
+      </aside>
+    </div>
+    <footer class="control-deck"><a class="hardware-button" href="#">↖ <span>Posts</span></a><div class="deck-grooves" aria-hidden="true"></div><button class="hardware-button" id="size-toggle" type="button" aria-pressed="false" aria-label="Increase reading text size">A+</button><button class="hardware-button" id="theme-toggle" type="button" aria-pressed="false">Light reading</button><span class="power" aria-hidden="true"></span></footer>
+  </div>
+</body>
+</html>
