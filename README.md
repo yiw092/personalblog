@@ -37,3 +37,6 @@ CMS entries are JSON files in content/posts, with title, date and an HTML rich-t
 GitHub Pages uses **GitHub Actions** as its publishing source. The workflow tests, builds and deploys dist on main updates. Source configurations and test fixtures are excluded from deployment. No secrets are stored in site code.
 
 Editor documentation: https://pagescms.org/docs/quick-start/
+
+## Homepage and navigation
+The mint-chocolate homepage is index.html. Blog posts live at blog.html; the pink star panel links home. Old root #post links redirect automatically. The CMS and publishing process are unchanged.
