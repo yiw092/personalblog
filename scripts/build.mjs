@@ -17,7 +17,7 @@ const compiled = compilePosts(entries, context.window.BLOG.posts);
 if (path.dirname(output) !== root.slice(0, -1) && path.dirname(output) !== root) throw new Error('Unexpected output path');
 await rm(output, { recursive: true, force: true });
 await mkdir(path.join(output, 'posts'), { recursive: true });
-for (const name of ['index.html', 'home.css', 'home.js', 'blog.html', 'style.css', 'app.js', '.nojekyll', 'assets', 'admin', 'posts']) {
+for (const name of ['index.html', 'home.css', 'home.js', 'latest-posts.js', 'blog.html', 'style.css', 'app.js', '.nojekyll', 'assets', 'admin', 'posts']) {
   await cp(path.join(root, name), path.join(output, name), { recursive: true });
 }
 for (const file of compiled.files) await writeFile(path.join(output, 'posts', file.filename), file.body);

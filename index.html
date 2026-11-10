@@ -7,20 +7,28 @@
   <title>Home</title>
   <link rel="stylesheet" href="home.css">
   <script src="home.js" defer></script>
+  <script src="content.js" defer></script>
+  <script src="latest-posts.js" defer></script>
 </head>
 <body>
-  <main class="home-console" aria-labelledby="home-title">
-    <header class="console-bar"><span class="indicator" aria-hidden="true"></span><span>Home</span><span class="bar-grooves" aria-hidden="true"></span></header>
-    <div class="console-frame">
-      <div class="home-screen">
-        <span class="corner top-left" aria-hidden="true"></span><span class="corner bottom-right" aria-hidden="true"></span>
-        <h1 id="home-title">Home</h1>
-        <nav aria-label="Main navigation">
-          <a class="blog-button" href="blog.html"><span>Blog</span><span aria-hidden="true">↗</span></a>
-        </nav>
-      </div>
-    </div>
-    <footer class="console-bottom" aria-hidden="true"><span class="bottom-grooves"></span><span class="chocolate-key"></span><span class="mint-key"></span></footer>
-  </main>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="home-wordmark" href="./" aria-label="Home"><span class="site-symbol" aria-hidden="true">✦</span><span>Home</span></a>
+      <nav aria-label="Main navigation"><a href="./" aria-current="page">Home</a><a href="blog.html">Blog <span aria-hidden="true">↗</span></a></nav>
+    </header>
+    <main id="main">
+      <section class="art-section" aria-label="Featured painting">
+        <div class="painting-frame"><img src="assets/home-landscape.png" width="1377" height="921" alt="Painting of a mountain valley with tall trees, snow and distant peaks." fetchpriority="high"></div>
+      </section>
+      <section class="journal-section" aria-labelledby="journal-title">
+        <div class="journal-heading"><div><span class="section-index" aria-hidden="true">01 /</span><h1 id="journal-title">Blog</h1></div><a class="browse-link" href="blog.html">All posts <span aria-hidden="true">↗</span></a></div>
+        <div id="latest-posts" class="post-list"></div>
+        <p id="no-posts" hidden>No posts yet.</p>
+        <noscript><a href="blog.html">Open the blog</a></noscript>
+      </section>
+    </main>
+    <footer class="site-footer"><a class="footer-home" href="./" aria-label="Home"><span aria-hidden="true">✦</span></a><span class="footer-rule" aria-hidden="true"></span><a class="admin-link" href="admin/" aria-label="Admin — open blog editor" title="Admin"><span aria-hidden="true">⚙</span></a></footer>
+  </div>
 </body>
 </html>
