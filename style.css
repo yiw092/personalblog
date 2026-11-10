@@ -27,3 +27,7 @@ body{height:100dvh;min-height:0;padding:clamp(10px,2.5vh,28px) clamp(12px,2.5vw,
 @media(max-width:760px){.computer{padding:0 14px;gap:10px}.computer:before,.computer:after{margin:0 -14px}.masthead{font-size:24px;padding:4px 0 10px}.workspace{display:flex;flex-direction:column;gap:12px}.screen-frame{flex:1}.sidebar{order:-1;display:grid;grid-template-columns:64px minmax(0,1fr) 96px;grid-template-rows:64px;gap:14px}.brand-panel{grid-column:auto;height:64px;gap:0}.brand-lines{display:none}.artwork-module{grid-column:auto;grid-row:auto}.artwork-module .module-title{display:none}.module{padding:0;border:0}.module-title{margin-bottom:8px}.artwork-slot{outline:0;border-width:3px}.screen{padding:20px}}
 @media(max-height:500px) and (min-width:761px){.computer{gap:8px}.masthead{padding:3px 0 8px;font-size:22px}.sidebar{grid-template-rows:44px auto minmax(0,1fr);gap:10px}.brand-panel{height:44px}.module-title{margin-bottom:6px}.module{padding-bottom:8px}.screen-frame{padding:10px}}
 @media print{body{height:auto}.computer,.workspace,.screen-frame,.screen{display:block;height:auto;overflow:visible}.sidebar,.masthead,.titlebar{display:none}}
+
+/* Keep the artwork frame proportional instead of filling the empty sidebar. */
+.artwork-module{align-self:start;max-height:100%}
+.artwork-slot{flex:0 1 auto;width:100%;aspect-ratio:4096/3035}
