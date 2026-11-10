@@ -37,7 +37,7 @@ async function route() {
   byId('panel-title').textContent = isPost ? 'Reading' : 'Posts';
   byId('home-link').setAttribute('aria-current', isPost ? 'false' : 'page');
   document.title = siteTitle;
-  byId('status-text').textContent = 'Ready';
+  document.querySelector('.screen').scrollTop = 0;
   if (!isPost) return;
   let slug;
   try { slug = decodeURIComponent(location.hash.slice(6)); } catch { slug = ''; }
@@ -48,7 +48,6 @@ async function route() {
   if (!post) return;
   byId('post-date').dateTime = post.date;
   document.title = post.title + ' — ' + siteTitle;
-  byId('status-text').textContent = 'Loading';
   try {
     const response = await fetch(post.file, { signal });
     if (!response.ok) throw new Error('Post unavailable');
@@ -56,21 +55,11 @@ async function route() {
     if (signal.aborted) return;
     // Only trusted HTML written by the blog owner belongs in post files.
     byId('post-body').innerHTML = html;
-    byId('status-text').textContent = 'Ready';
     byId('reading').focus({ preventScroll: true });
   } catch (error) {
     if (signal.aborted) return;
     byId('post-body').textContent = 'This post could not be loaded. Please try again.';
-    byId('status-text').textContent = 'Load error';
   }
 }
-function toggle(id, className) {
-  byId(id).addEventListener('click', () => {
-    const active = document.body.classList.toggle(className);
-    byId(id).setAttribute('aria-pressed', String(active));
-  });
-}
-toggle('size-toggle', 'large-text');
-toggle('theme-toggle', 'dark-reading');
 window.addEventListener('hashchange', route);
 route();
